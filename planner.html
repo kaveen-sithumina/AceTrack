@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Daily Planner</title>
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+  <!-- Navbar -->
+  <header class="header">
+    <div class="brand">
+      <img src="brand.jpeg" alt="AceTrack">
+      <p>AceTrack</p>
+    </div>
+
+    <nav class="nav">
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a class="active" href="planner.html">Daily Planner</a>
+        <a href="goals.html">Goals & Progress</a>
+        <a href="about.html">About & Study Tips</a>
+      </div>
+
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
+
+      <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html">Home</a>
+        <a class="active" href="planner.html">Daily Planner</a>
+        <a href="goals.html">Goals & Progress</a>
+        <a href="about.html">About & Study Tips</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Page Title Area -->
+  <section class="page-head">
+    <div class="container">
+      <h1 class="page-title">Daily Planner</h1>
+      <p class="subtitle">Create your study blocks and manage your weekly schedule easily.</p>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main class="container">
+    <!-- Form -->
+    <section class="box">
+      <h2>Add Study Block</h2>
+      <p class="hint">Fill the details and press <b>Add</b>.</p>
+
+      <label for="day">Day</label>
+      <select id="day">
+        <option>Monday</option><option>Tuesday</option><option>Wednesday</option>
+        <option>Thursday</option><option>Friday</option><option>Saturday</option><option>Sunday</option>
+      </select>
+
+      <label for="time">Time</label>
+      <input id="time" type="time" />
+
+      <label for="subject">Subject</label>
+      <input id="subject" type="text" placeholder="Ex: Web Fundamentals" />
+
+      <label for="duration">Duration (minutes)</label>
+      <input id="duration" type="number" value="60" min="15" step="15" />
+
+      <label for="goal">Goal (optional)</label>
+      <input id="goal" type="text" placeholder="Ex: Finish lecture notes" />
+
+      <div class="btn-row">
+        <button id="addBtn" type="button">Add</button>
+        <button id="clearBtn" class="danger" type="button">Clear All</button>
+      </div>
+
+      <p id="msg"></p>
+    </section>
+
+    <!-- Output -->
+    <section class="box">
+      <h2>My Weekly Schedule</h2>
+      <p class="hint">Your schedule will appear below.</p>
+      <div id="output"></div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+
+  <footer class="footer">
+    <div class="container footer-row">
+      <p>&copy; 2026 Smart Study Planner</p>
+      <p>Designed for better learning and time management</p>
+    </div>
+  </footer>
+
+  <!-- Mobile menu script (if you don’t have in app.js) -->
+  <script>
+    const toggleBtn = document.querySelector(".nav-toggle");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    toggleBtn.addEventListener("click", () => {
+      const isOpen = mobileMenu.classList.toggle("show");
+      toggleBtn.setAttribute("aria-expanded", isOpen);
+    });
+  </script>
+</body>
+</html>

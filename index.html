@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AceTrack-Home</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <!-- Header / Navbar -->
+  <header class="header">
+    <div class="brand">
+      <img src="brand.jpeg" alt="AceTrack">
+      <p>AceTrack</p>
+    </div>
+
+    <nav class="nav">
+      <div class="nav-links">
+        <a class="active" href="index.html">Home</a>
+        <a href="planner.html">Daily Planner</a>
+        <a href="goals.html">Goals & Progress</a>
+        <a href="about.html">About & Study Tips</a>
+      </div>
+
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+        ☰
+      </button>
+
+      <!-- Mobile menu (inside nav) -->
+      <div class="mobile-menu" id="mobileMenu">
+        <a class="active" href="index.html">Home</a>
+        <a href="planner.html">Daily Planner</a>
+        <a href="goals.html">Goals & Progress</a>
+        <a href="about.html">About & Study Tips</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-left">
+          <p class="badge">Plan • Focus • Achieve</p>
+          <h1>SMART STUDY PLANNER</h1>
+          <p class="subtitle">
+            Your personal guide to organized and effective studying. Build daily habits,
+            reduce stress, and improve results through smart planning.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn primary" href="planner.html">Create Daily Plan</a>
+            <a class="btn ghost" href="goals.html">Set Weekly Goals</a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat">
+              <span class="stat-num">✔</span>
+              <span class="stat-text">Better time management</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num">✔</span>
+              <span class="stat-text">Less procrastination</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num">✔</span>
+              <span class="stat-text">More consistent study</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-right">
+          <div class="card hero-card">
+            <h2 class="card-title">Today’s Focus</h2>
+            <p class="card-desc">A simple plan beats stress. Start with small steps.</p>
+
+            <div class="mini-list">
+              <div class="mini-item">
+                <span class="dot"></span>
+                <div>
+                  <p class="mini-title">Study Session</p>
+                  <p class="mini-sub">1–2 hours focused learning</p>
+                </div>
+              </div>
+
+              <div class="mini-item">
+                <span class="dot"></span>
+                <div>
+                  <p class="mini-title">Homework</p>
+                  <p class="mini-sub">Finish tasks early</p>
+                </div>
+              </div>
+
+              <div class="mini-item">
+                <span class="dot"></span>
+                <div>
+                  <p class="mini-title">Quick Review</p>
+                  <p class="mini-sub">Revise notes for 15 mins</p>
+                </div>
+              </div>
+            </div>
+
+            <a class="btn primary full" href="planner.html">Open Daily Planner</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Description -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="why">Why Smart Study Planner?</h2>
+          <p>
+            Many students struggle with time management, unfinished homework,
+            last-minute exam preparation, and stress. This website helps you plan
+            your day and set realistic weekly goals.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <div class="card">
+            <h3>Organized Daily Schedule</h3>
+            <p>Create a structured plan that balances study, rest, and personal time.</p>
+          </div>
+          <div class="card">
+            <h3>Weekly Goals</h3>
+            <p>Set clear targets and track your progress step-by-step.</p>
+          </div>
+          <div class="card">
+            <h3>Less Stress</h3>
+            <p>Planning ahead reduces pressure and improves focus over time.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quote -->
+    <section class="section quote">
+      <div class="container">
+        <div class="quote-card">
+          <p class="quote-text">
+            “Success doesn’t come from what you do occasionally. It comes from what you do consistently.”
+          </p>
+          <p class="quote-sub">
+            Success is not about studying for one day before an exam or working hard only when you feel motivated. True success is built through daily habits and regular effort. Even studying one or two hours every day can make a huge difference over time.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Introduction -->
+    <section class="section">
+      <div class="container intro">
+        <div class="card intro-card">
+          <h2>Welcome to your smart study journey</h2>
+          <p>
+            This planner is designed for students who want better time management and academic success
+            without unnecessary stress. Use it to plan your day, set weekly goals, and monitor progress.
+          </p>
+
+          <ul class="checklist">
+            <li>Plan your daily study schedule</li>
+            <li>Set weekly academic goals</li>
+            <li>Monitor your learning progress</li>
+            <li>Improve focus and productivity</li>
+          </ul>
+
+          <div class="note">
+            <strong>Remember:</strong> Good planning today leads to better results tomorrow.
+          </div>
+
+          <div class="hero-actions">
+            <a class="btn primary" href="planner.html">Start Now</a>
+            <a class="btn ghost" href="about.html">Read Study Tips</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-row">
+      <p>&copy; 2026 Smart Study Planner</p>
+      <p>Designed for better learning and time management</p>
+    </div>
+  </footer>
+
+  <script>
+    const toggleBtn = document.querySelector(".nav-toggle");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    toggleBtn.addEventListener("click", () => {
+      const isOpen = mobileMenu.classList.toggle("show");
+      toggleBtn.setAttribute("aria-expanded", isOpen);
+    });
+  </script>
+</body>
+</html>

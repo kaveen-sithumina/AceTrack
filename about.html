@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AceTrack-Home</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+  <!-- Header / Navbar -->
+  <header class="header">
+    <div class="brand">
+      <img src="brand.jpeg" alt="AceTrack">
+      <p>AceTrack</p>
+    </div>
+
+    <nav class="nav">
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="planner.html">Daily Planner</a>
+        <a href="goals.html">Goals & Progress</a>
+        <a class="active" href="about.html">About & Study Tips</a>
+      </div>
+
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+        ☰
+      </button>
+
+      <!-- Mobile menu (inside nav) -->
+      <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html">Home</a>
+        <a href="planner.html">Daily Planner</a>
+        <a href="goals.html">Goals & Progress</a>
+        <a class="active" href="about.html">About & Study Tips</a>
+      </div>
+    </nav>
+  </header>
+
+  <section class="page-head">
+    <div class="container">
+      <h1 class="page-title">About This Planner</h1>
+      <p class="subtitle">Learn how Smart Study Planner helps students manage time, improve focus, and build strong study habits.</p>
+    </div>
+  </section>
+
+  <!-- About + Tips -->
+    <section class="section">
+      <div class="container grid-2">
+
+        <!-- About -->
+        <div class="card">
+          <h2 class="section-title">About Smart Study Planner</h2>
+
+          <p class="muted-text">
+            The Smart Study Planner is designed to help students improve time management and academic performance.
+            It provides a simple and structured way to organize daily tasks, set weekly goals, and track learning progress.
+          </p>
+
+          <p class="muted-text">
+            By planning your studies in advance, you can avoid last-minute stress and stay focused on your priorities.
+            This planner encourages consistency, discipline, and smart study habits that lead to better results.
+          </p>
+
+          <p class="muted-text">
+            With regular practice and proper planning, students can build confidence, improve productivity,
+            and achieve their academic goals step by step.
+          </p>
+
+          <div class="note">
+            <strong>Tip:</strong> Start small. Even 30 minutes of daily revision can build a strong habit.
+          </div>
+        </div>
+
+        <!-- Study Tips -->
+        <div class="card">
+          <h2 class="section-title">Study Tips</h2>
+
+          <ul class="tips-list">
+            <li>Study at the same time every day</li>
+            <li>Keep your study area clean and quiet</li>
+            <li>Turn off social media notifications</li>
+            <li>Review lessons before sleeping</li>
+            <li>Practice past papers regularly</li>
+            <li>Take short breaks between study sessions</li>
+          </ul>
+
+          <div class="mini-card">
+            <h3>Quick Focus Rule</h3>
+            <p class="muted-text">25 minutes focus + 5 minutes break = better concentration.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Quotes -->
+    <section class="section">
+      <div class="container">
+        <div class="grid-2">
+
+          <div class="quote-box">
+            <h3>🌟 Stay Consistent</h3>
+            <p>
+              “Small progress each day adds up to big results.<br>
+              Stay focused on your goals and trust the process.<br>
+              Every small effort counts.”
+            </p>
+          </div>
+
+          <div class="quote-box">
+            <h3>✨ Believe in Yourself</h3>
+            <p>
+              “Your future is created by what you do today.<br>
+              Every lesson you study and every effort you make<br>
+              brings you closer to your dreams.”
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="grid-2">
+
+          <div class="quote-box">
+            <h3>💡 Keep Growing</h3>
+            <p>
+              “Success doesn’t come from what you do occasionally,<br>
+              it comes from what you do consistently.<br>
+              Make studying a daily habit.”
+            </p>
+          </div>
+
+          <div class="quote-box">
+            <h3>🚀 Never Give Up</h3>
+            <p>
+              “Difficult roads often lead to beautiful destinations.<br>
+              Keep pushing forward, stay determined,<br>
+              and remember why you started.”
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+
+
+  <footer class="footer">
+    <div class="container footer-row">
+      <p>&copy; 2026 Smart Study Planner</p>
+      <p>Designed for better learning and time management</p>
+    </div>
+  </footer>
+
+  <!-- Mobile menu script (if you don’t have in app.js) -->
+  <script>
+    const toggleBtn = document.querySelector(".nav-toggle");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    toggleBtn.addEventListener("click", () => {
+      const isOpen = mobileMenu.classList.toggle("show");
+      toggleBtn.setAttribute("aria-expanded", isOpen);
+    });
+  </script>

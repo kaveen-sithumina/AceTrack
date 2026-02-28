@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Daily Planner</title>
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+  <!-- Navbar -->
+  <header class="header">
+    <div class="brand">
+      <img src="brand.jpeg" alt="AceTrack">
+      <p>AceTrack</p>
+    </div>
+
+    <nav class="nav">
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="planner.html">Daily Planner</a>
+        <a class="active" href="goals.html">Goals & Progress</a>
+        <a href="about.html">About & Study Tips</a>
+      </div>
+
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
+
+      <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html">Home</a>
+        <a href="planner.html">Daily Planner</a>
+        <a class="active" href="goals.html">Goals & Progress</a>
+        <a href="about.html">About & Study Tips</a>
+      </div>
+    </nav>
+  </header>
+
+  <section class="card" style="margin-top:14px;">
+      <h2 class="section-title"> Weekly Goals</h2>
+      <p class="hint">Write 3 goals. Click save to keep them.</p>
+
+      <label class="form-label" for="g1">Goal 1</label>
+      <input class="form-input" id="g1" type="text" placeholder="Ex: Finish 3 lectures" />
+
+      <label class="form-label" for="g2">Goal 2</label>
+      <input class="form-input" id="g2" type="text" placeholder="Ex: Do 2 past papers" />
+
+      <label class="form-label" for="g3">Goal 3</label>
+      <input class="form-input" id="g3" type="text" placeholder="Ex: Complete assignment" />
+
+      <div class="btn-row" style="margin-top:14px;">
+        <button class="btn primary" id="saveGoals" type="button">Save Goals</button>
+        <button class="btn ghost" id="clearGoals" type="button">Clear</button>
+      </div>
+
+      <p id="goalMsg" class="hint"></p>
+    </section>
+
+
+  <section class="card" style="margin-top:14px;">
+      <h2 class="section-title"> Progress Tracker</h2>
+      <p class="hint">Tick what you completed. Save to keep it.</p>
+
+      <div class="check-grid">
+        <label class="check"><input type="checkbox" data-key="study5"> Study 5 days</label>
+        <label class="check"><input type="checkbox" data-key="homework"> Finish homework</label>
+        <label class="check"><input type="checkbox" data-key="review"> Review notes</label>
+        <label class="check"><input type="checkbox" data-key="papers"> Practice past papers</label>
+        <label class="check"><input type="checkbox" data-key="lectures"> Attend lectures</label>
+        <label class="check"><input type="checkbox" data-key="sleep"> Sleep 7+ hours</label>
+      </div>
+
+      <div class="btn-row" style="margin-top:14px;">
+        <button class="btn primary" id="saveProgress" type="button">Save Progress</button>
+        <button class="btn ghost" id="clearProgress" type="button">Clear</button>
+      </div>
+
+      <p id="progressMsg" class="hint"></p>
+    </section>
+
+
+  <section class="section">
+      <div class="container">
+
+        <div class="card">
+          <h2 class="table-title">Daily Study Schedule</h2>
+
+          <div class="table-wrapper">
+            <table class="study-table">
+              <thead>
+                <tr>
+                  <th>Time</th>
+                  <th>Activity</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>5:30 - 6:00 AM</td><td>Wake up & refresh</td></tr>
+                <tr><td>6:00 - 7:00 AM</td><td>Review previous lessons</td></tr>
+                <tr><td>7:00 - 8:00 AM</td><td>Breakfast & get ready</td></tr>
+                <tr><td>8:00 - 12:00 PM</td><td>School / Lectures</td></tr>
+                <tr><td>12:00 - 1:00 PM</td><td>Lunch & rest</td></tr>
+                <tr><td>1:00 - 3:00 PM</td><td>Homework & assignments</td></tr>
+                <tr><td>3:00 - 4:00 PM</td><td>Short break / Relax</td></tr>
+                <tr><td>4:00 - 6:00 PM</td><td>Study difficult subjects</td></tr>
+                <tr><td>6:00 - 7:00 PM</td><td>Exercise / Refresh</td></tr>
+                <tr><td>7:00 - 8:30 PM</td><td>Revision & notes</td></tr>
+                <tr><td>8:30 - 9:00 PM</td><td>Plan for next day</td></tr>
+                <tr><td>9:30 PM</td><td>Sleep early</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+  <footer class="footer">
+    <div class="container footer-row">
+      <p>&copy; 2026 Smart Study Planner</p>
+      <p>Designed for better learning and time management</p>
+    </div>
+  </footer>
+
+  <!-- Mobile menu script (if you don’t have in app.js) -->
+  <script>
+    const toggleBtn = document.querySelector(".nav-toggle");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    toggleBtn.addEventListener("click", () => {
+      const isOpen = mobileMenu.classList.toggle("show");
+      toggleBtn.setAttribute("aria-expanded", isOpen);
+    });
+
+    const GOALS_KEY = "ssp_weekly_goals";
+    const g1 = document.getElementById("g1");
+    const g2 = document.getElementById("g2");
+    const g3 = document.getElementById("g3");
+    const goalMsg = document.getElementById("goalMsg");
+
+    function loadGoals(){
+      const data = localStorage.getItem(GOALS_KEY);
+      if(!data) return;
+      const goals = JSON.parse(data);
+      g1.value = goals.g1 || "";
+      g2.value = goals.g2 || "";
+      g3.value = goals.g3 || "";
+    }
+
+    document.getElementById("saveGoals").addEventListener("click", () => {
+      localStorage.setItem(GOALS_KEY, JSON.stringify({
+        g1: g1.value.trim(),
+        g2: g2.value.trim(),
+        g3: g3.value.trim()
+      }));
+      goalMsg.textContent = "✅ Goals saved!";
+    });
+
+    document.getElementById("clearGoals").addEventListener("click", () => {
+      localStorage.removeItem(GOALS_KEY);
+      g1.value = ""; g2.value = ""; g3.value = "";
+      goalMsg.textContent = "🧹 Cleared!";
+    });
+
+    loadGoals();
+
+    const PROGRESS_KEY = "ssp_progress_checklist";
+    const progressMsg = document.getElementById("progressMsg");
+    const boxes = document.querySelectorAll('input[type="checkbox"][data-key]');
+
+    function loadProgress(){
+      const data = localStorage.getItem(PROGRESS_KEY);
+      if(!data) return;
+      const saved = JSON.parse(data);
+      boxes.forEach(cb => cb.checked = !!saved[cb.dataset.key]);
+    }
+
+    document.getElementById("saveProgress").addEventListener("click", () => {
+      const saved = {};
+      boxes.forEach(cb => saved[cb.dataset.key] = cb.checked);
+      localStorage.setItem(PROGRESS_KEY, JSON.stringify(saved));
+      progressMsg.textContent = "✅ Progress saved!";
+    });
+
+    document.getElementById("clearProgress").addEventListener("click", () => {
+      localStorage.removeItem(PROGRESS_KEY);
+      boxes.forEach(cb => cb.checked = false);
+      progressMsg.textContent = "🧹 Cleared!";
+    });
+
+    loadProgress();
+  </script>
+  </body>
+</html>
